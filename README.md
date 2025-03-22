@@ -20,7 +20,7 @@ Features
 
 Usage
 -----
-1. Download and put the script somewhere.
+1. Download and put the script somewhere. Unzip the ffmpeg.zip into the same folder as the batch script file. (this is zipped due to github filesize constraints)
 2. Drag and drop a video file on it.
 3. Follow the on-screen instructions.
 
