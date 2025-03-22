@@ -3,7 +3,7 @@
 :: Necessary for some loop and branching operations ::
 setlocal enabledelayedexpansion
 :: Max 4chan file size for webm's, slightly reduced because ffmpeg averages the bitrate and it can become slightly bigger than the max size, even with perfect calculation
-set max_file_size=2900
+set max_file_size=2700
 
 :: Check if script was started with a proper parameter ::
 if "%~1" == "" (
@@ -76,10 +76,9 @@ for /f %%N in ('mshta "javascript:code(close(new ActiveXObject('Scripting.FileSy
 set webm_name="%~n1[sound=%upload_url_encoded%].webm"
 
 :: Two pass encoding because reasons ::
-ffmpeg.exe -i "%~1" -c:v libvpx -b:v %bitrate%K -quality best %resolutionset% %startset% %lengthset% -an -sn -threads 0 -f webm -pass 1 -y NUL
+ffmpeg.exe -i "%~1" -c:v libvpx -b:v %bitrate%K -quality best %resolutionset% %startset% %lengthset% -an -sn -threads 0 -f webm -pass 1 -y temp.webm
 ffmpeg.exe -i "%~1" -c:v libvpx -b:v %bitrate%K -quality best %resolutionset% %startset% %lengthset% -an -sn -threads 0 -pass 2 -y "%webm_name%"
 del ffmpeg2pass-0.log
-pause
 goto :EOF
 
 :: Helper function to calculate length of video ::
