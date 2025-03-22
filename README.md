@@ -1,6 +1,10 @@
-4chan-webm-maker
+4chan-external-sound-webm-maker
 ================
-A handy little script that automates most steps involved in creating webm's for the 4chan imageboard. It automatically respects 4chan's filesize limitation for webm's and calculates optimal settings for maximum quality. A five year old could make webm's with this.
+A handy little script that automates most steps involved in creating external audio webm's for the 4chan imageboard. It automatically respects 4chan's filesize limitation for webm's and calculates optimal settings for maximum quality. A five year old could make webm's with this.
+
+Meant to be used with 4chan External Sounds (https://greasyfork.org/en/scripts/31045-4chan-external-sounds)
+
+Fixed by funions123
 
 Features
 --------
@@ -12,6 +16,7 @@ Features
   - Read: "Tries to make it look as good as possible".
 - Easy on-screen prompts to change offset and length of webm rendering. No editing necessary to extract "that one good part".
 - Simplified resolution setup. Simply put in the desired vertical resolution ( ie. 720 ) and the script does the rest. Maintains aspect ratio aswell of course.
+- Automagically uploads the audio track to catbox.moe and tags the webm with external sound.
 
 Usage
 -----
@@ -21,4 +26,4 @@ Usage
 
 Dependencies
 ------------
-- ffmpeg ( included )
+- ffmpeg ( included ) ( updated to latest ffmpeg version as of 3/22/2025 )
